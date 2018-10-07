@@ -6,7 +6,7 @@ Technology Used: Ethereum Smart Contract, Blockchain, Ganache, MetaMask, Remix I
 The project is currently under development. It will be regularly updated.
 
 ## Requirements
-
+To be updated soon.
 
 
 ## Implementation
