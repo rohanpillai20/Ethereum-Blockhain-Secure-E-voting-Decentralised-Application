@@ -1,0 +1,20 @@
+INFO [10-05|10:12:56.638] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [10-05|10:12:56.666] Starting peer-to-peer node               instance=Geth/v1.8.16-stable-477eb093/windows-amd64/go1.11
+INFO [10-05|10:12:56.666] Allocated cache and file handles         database=C:\\chain1\\geth\\chaindata cache=768 handles=1024
+INFO [10-05|10:12:56.861] Initialised chain configuration          config="{ChainID: 1 Homestead: 1150000 DAO: 1920000 DAOSupport: true EIP150: 2463000 EIP155: 2675000 EIP158: 2675000 Byzantium: 4370000 Constantinople: <nil> Engine: ethash}"
+INFO [10-05|10:12:56.861] Disk storage enabled for ethash caches   dir=C:\\chain1\\geth\\ethash count=3
+INFO [10-05|10:12:56.861] Disk storage enabled for ethash DAGs     dir=C:\\Users\\dell\\AppData\\Ethash count=2
+INFO [10-05|10:12:56.862] Initialising Ethereum protocol           versions="[63 62]" network=15
+INFO [10-05|10:12:56.864] Loaded most recent local header          number=0 hash=d4e567…cb8fa3 td=17179869184 age=49y5mo2w
+INFO [10-05|10:12:56.865] Loaded most recent local full block      number=0 hash=d4e567…cb8fa3 td=17179869184 age=49y5mo2w
+INFO [10-05|10:12:56.865] Loaded most recent local fast block      number=0 hash=d4e567…cb8fa3 td=17179869184 age=49y5mo2w
+INFO [10-05|10:12:56.869] Loaded local transaction journal         transactions=0 dropped=0
+INFO [10-05|10:12:56.874] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [10-05|10:12:56.875] Starting P2P networking 
+INFO [10-05|10:12:59.365] UDP listener up                          self=enode://f5240c8aa6724596838cfee7c701d6c83c2b80075a4f6f50ab02f07901c92d05118a7d39e0620b9303f13033e19360daf94a9c8304108370867a786a48b13b92@192.168.1.1:30301
+INFO [10-05|10:12:59.370] RLPx listener up                         self=enode://f5240c8aa6724596838cfee7c701d6c83c2b80075a4f6f50ab02f07901c92d05118a7d39e0620b9303f13033e19360daf94a9c8304108370867a786a48b13b92@192.168.1.1:30301
+INFO [10-05|10:12:59.374] Blockchain manager stopped 
+INFO [10-05|10:12:59.374] Stopping Ethereum protocol 
+INFO [10-05|10:12:59.374] Ethereum protocol stopped 
+INFO [10-05|10:12:59.375] Transaction pool stopped 
+INFO [10-05|10:12:59.430] Database closed                          database=C:\\chain1\\geth\\chaindata
