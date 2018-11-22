@@ -5,25 +5,47 @@ abi=JSON.parse('[{"constant":false,"inputs":[{"name":"_candidateId","type":"uint
 var votedOrNot=[]
 
 VotingContract = web3.eth.contract(abi);
-// In your nodejs console, execute contractInstance.address to get the address at which the contract is deployed and change the line below to use your deployed address
-var contractInstance = VotingContract.at('0x1079a9cd55d231ee299bb7a7915716bb177d5c6f');
+// In the nodejs console, execute contractInstance.address to get the address at which the contract is deployed and change the line below to use your deployed address
+var contractInstance = VotingContract.at('CONTRACT_ADDRESS');
 var candidates = {"Bill": 1, "Tom": 2, "Janice": 3}
 
-function voteForCandidate() {
-	var account = prompt("Please enter your registered number");
-	$("#ID").html("Your Account ID: "+web3.eth.accounts[account]);
-	$("#bal").html("Balance: "+web3.eth.getBalance(web3.eth.accounts[account])/Math.pow(10,18));
-	var e = document.getElementById("candidate").value;
-	var candidateName = e;	
+var dateV = '22/11/2018'
 
-	try{
-		contractInstance.vote(candidates[candidateName], {from: web3.eth.accounts[account]}); 
-	}catch(err){
-		if(err.toString()=='Error: VM Exception while processing transaction: revert'){
-			alert("You have already voted.\n" + err);
-		}
-	}finally{
+function voteForCandidate() {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+	if(dd<10) {
+		dd = '0'+dd
+	} 
+	if(mm<10) {
+		mm = '0'+mm
+	} 
+	today = dd + '/' + mm + '/' + yyyy;
+
+
+	if(today.toString()==dateV){		
+		document.getElementById('vote').disabled = true;
+		alert("Voting has been disabled");		
+	}else{
+	
+	
+		var account = prompt("Please enter your registered number");
+		$("#ID").html("Your Account ID: "+web3.eth.accounts[account]);
 		$("#bal").html("Balance: "+web3.eth.getBalance(web3.eth.accounts[account])/Math.pow(10,18));
+		var e = document.getElementById("candidate").value;
+		var candidateName = e;	
+
+		try{
+			contractInstance.vote(candidates[candidateName], {from: web3.eth.accounts[account]}); 
+		}catch(err){
+			if(err.toString()=='Error: VM Exception while processing transaction: revert'){
+				alert("You have already voted.\n" + err);
+			}
+		}finally{
+			$("#bal").html("Balance: "+web3.eth.getBalance(web3.eth.accounts[account])/Math.pow(10,18));
+		}
 	}
 }
 
@@ -41,13 +63,14 @@ function countForCandidate() {
 	today = dd + '/' + mm + '/' + yyyy;
 
 
-	if(today.toString()=='13/11/2018'){
+	if(today.toString()==dateV){
 		document.getElementById('win1').disabled = false;
+		document.getElementById('vote').disabled = true;
 		for(var i=1;i<4;i++){
 			$("#candidate-"+i).html(contractInstance.candidates(i)[2].toString());		
 		}
 	}else{
-		alert("The results will be declared on 13/11/2018");
+		alert("The results will be declared on 23/11/2018");
 	}		
 }
 
